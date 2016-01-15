@@ -151,16 +151,16 @@ $(function() {
 
 	prettyPrint();
 
-    <c:set var="dateFormat" value="${fn:toLowerCase(t['date.joda.simple.pattern'])}" />
-    
+	<c:set var="dateFormat" value="${fn:toLowerCase(t['date.joda.simple.pattern'])}" />
+
 	$("#datepicker-age").pickadate({
-	        format: '<c:out value="${dateFormat}" escapeXml="true" />',
+		format: '<c:out value="${dateFormat}" escapeXml="true" />',
 		max: -12*365,
 		readOnly: false
 	});
-	
+
 	$(".datepicker").pickadate({
-	        format: '<c:out value="${dateFormat}" escapeXml="true" />',
+		format: '<c:out value="${dateFormat}" escapeXml="true" />',
 		max: 1,
 		readOnly: false
 	});

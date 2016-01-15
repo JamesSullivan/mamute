@@ -23,25 +23,25 @@ $(function(){
 	$.validator.addMethod(
 	    "date",
 	    function(value, element) {
-	    	if(value.trim().length == 0){
-	    		return true;
-	    	}
+		if(value.trim().length == 0){
+			return true;
+		}
 
-	    	var dateFormat = $(element).data('dateformat');
-	    	if(dateFormat.length == 0){
-	    		return true;
-	    	}
+		var dateFormat = $(element).data('dateformat');
+		if(dateFormat.length == 0){
+			return true;
+		}
 
-	    	var dayPattern = '(0[1-9]|[12][0-9]|3[01])';
-	    	var monthPattern = '(0[1-9]|1[0-2])';
-	    	var yearPattern = '(19[1-9][0-9]|20[01][0-3])';
+		var dayPattern = '(0[1-9]|[12][0-9]|3[01])';
+		var monthPattern = '(0[1-9]|1[0-2])';
+		var yearPattern = '(19[1-9][0-9]|20[01][0-3])';
 
-	    	var datePattern = '^' + dateFormat.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&") + '$';
-	    	datePattern = datePattern.replace(/dd/i, dayPattern);
-	    	datePattern = datePattern.replace(/mm/i, monthPattern);
-	    	datePattern = datePattern.replace(/yyyy/i, yearPattern);
+		var datePattern = '^' + dateFormat.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&") + '$';
+		datePattern = datePattern.replace(/dd/i, dayPattern);
+		datePattern = datePattern.replace(/mm/i, monthPattern);
+		datePattern = datePattern.replace(/yyyy/i, yearPattern);
 
-	    	return value.match(new RegExp(datePattern));
+		return value.match(new RegExp(datePattern));
 	    },
 	    Messages.get('validator.invalid.date')
 	);

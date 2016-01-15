@@ -32,7 +32,7 @@
 
 	<label for="birthDate" class="form-label">${t['user_profile.edit.form.birth_date.label']}</label>
 	<tags:dateInput name="birthDate" id="datepicker-age" value="${user.birthDate}" />
-	
+
 	<label for="location" class="form-label">${t['user_profile.edit.form.location.label']}</label>
 	<input type="text" name="location" class="text-input" maxlength="100" value="<c:out value="${user.location}" escapeXml="true"/>"/>
 	

@@ -45,7 +45,7 @@ public class BrutalDateTimeConverter extends DateTimeConverter{
 		if (isNullOrEmpty(value)) {
 			return null;
 		}
-		
+
 		try {
 			return getFormatter().parseDateTime(value);
 		} catch (IllegalFieldValueException e) {
@@ -56,7 +56,7 @@ public class BrutalDateTimeConverter extends DateTimeConverter{
 		}
 		return null;
 	}
-	
+
 	@Override
 	protected DateTimeFormatter getFormatter() {
 		return DateTimeFormat.forPattern(bundle.getMessage("date.joda.simple.pattern"));

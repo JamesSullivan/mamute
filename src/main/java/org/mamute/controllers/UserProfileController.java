@@ -222,7 +222,7 @@ public class UserProfileController extends BaseController{
 	private SanitizedText correctWebsite(SanitizedText website) {
 		String text = website.getText();
 		if (isBlank(text))
-				return fromTrustedText("");
+			return fromTrustedText("");
 		if (text.startsWith(HTTP))
 			return website;
 		return fromTrustedText(HTTP + text);

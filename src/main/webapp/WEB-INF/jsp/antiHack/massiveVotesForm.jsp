@@ -17,7 +17,7 @@
 	<tags:dateInput name="begin" id="massive-votes-begin" cssClass="datepicker" />
 	<label>end</label>
 	<tags:dateInput name="end" id="massive-votes-end" cssClass="datepicker" />
-	
+
 	<label>Tipo de voto</label>
 	<select name="voteType">
 		<option value="UP">${t['suspects.upvote']}</option>
