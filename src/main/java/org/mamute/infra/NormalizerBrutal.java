@@ -17,14 +17,16 @@ public class NormalizerBrutal {
 		Pattern WHITESPACE = Pattern.compile("[\\s]");
 		String nowhitespace = WHITESPACE.matcher(input).replaceAll("-");
 		String normalized = Normalizer.normalize(nowhitespace, Form.NFD);
-		String slug = NONLATIN.matcher(normalized).replaceAll("");
-
+		String slug = normalized.replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+        
 		if (urlEncodeNonNormalizableCharacter) {
 			try {
 				slug = URLEncoder.encode(slug, "UTF-8");
 			} catch (UnsupportedEncodingException e) {
 				throw new IllegalArgumentException(e);
 			}
+		} else {
+			slug = slug.replaceAll("[?!]", "");
 		}
 
 		return slug.toLowerCase(Locale.ENGLISH);

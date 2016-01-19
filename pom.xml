@@ -106,9 +106,12 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-			<groupId>br.com.caelum.vraptor</groupId>
-			<artifactId>vraptor-simplemail</artifactId>
-			<version>4.0.0-RC2</version>
+		    <!-- Modified by js version to handle SSL E-mail providers         -->
+		    <groupId>br.com.caelum.vraptor</groupId>
+		    <artifactId>vraptor-simplemail</artifactId>
+		    <version>4.1.0-RC3-SNAPSHOT</version>
+		    <scope>system</scope>
+		    <systemPath>/home/sullija/java/workspace/vraptor-simplemail/target/vraptor-simplemail-4.1.0-RC3-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>br.com.caelum.vraptor</groupId>
