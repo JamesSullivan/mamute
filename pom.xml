@@ -581,9 +581,9 @@
 
 		<!-- TEST DEPENDENCIES -->
 		<dependency>
-			<groupId>br.com.caelum</groupId>
+			<groupId>br.com.caelum.vraptor</groupId>
 			<artifactId>vraptor-test</artifactId>
-			<version>4.0-SNAPSHOT</version>
+			<version>4.0.0</version>
 			<scope>test</scope>
 			<exclusions>
 				<exclusion>
@@ -608,6 +608,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+        <dependency>
+            <groupId>org.jboss.weld.se</groupId>
+            <artifactId>weld-se-core</artifactId>
+            <version>2.1.0.Final</version>
+            <scope>test</scope>
+        </dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

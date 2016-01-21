@@ -9,6 +9,7 @@ import java.util.List;
 import org.hamcrest.Matchers;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeUtils;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mamute.builder.QuestionBuilder;
@@ -188,5 +189,12 @@ public class TagDAOTest extends DatabaseTestCase{
 		session.save(question);
 		return question;
 	}
+
+	@After
+	public void tearDown() {
+		DateTimeUtils.setCurrentMillisSystem();
+	}
+
+
 }
 
