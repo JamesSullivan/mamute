@@ -53,7 +53,12 @@ public class AuthController extends BaseController {
 	public void login(String email, String password, String redirectUrl) {
 		try {
 			if (validator.validate(email, password) && auth.authenticate(email, password)) {
-				redirectToRightUrl(redirectUrl);
+				if(loggedUser.getCurrent().isConfirmedEmail()) {
+					redirectToRightUrl(redirectUrl);
+				} else {
+					System.out.println("redirectTo(ConfirmEmailController.class).sendEmailConfirm(email);");
+					redirectTo(ConfirmEmailController.class).sendEmailConfirm(email);
+				}
 			} else {
 				includeAsList("mamuteMessages", i18n("error", "auth.invalid.login"));
 				validator.onErrorRedirectTo(this).loginForm(redirectUrl);

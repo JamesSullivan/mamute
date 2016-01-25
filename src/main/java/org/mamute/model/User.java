@@ -205,6 +205,14 @@ public class User implements Identifiable {
 	public long getKarma() {
 		return karma;
 	}
+	
+	public boolean isConfirmedEmail() {
+		return confirmedEmail;
+	}
+	
+	public void setConfirmedEmail() {
+		confirmedEmail = true;
+	}
 
 	public String getEmail() {
 		return email;

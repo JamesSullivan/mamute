@@ -5,6 +5,5 @@
 
 <tags:header title="${genericTitle} - ${title}"/>
 
-<h2 class="title page-title">${t['signup.form.title']}</h2>
-
-<tags:signupForm name="${name}" email="${email}"/>
+<h2 class="title page-title">${t['confirm_email.success']}</h2>
+<a href="${linkTo[ListController].home}" >Click here to continue</a>
