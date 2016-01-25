@@ -729,7 +729,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -766,6 +765,11 @@
 								<argument>${maven.build.timestamp}</argument>
 							</arguments>
 						</configuration>
+					</execution>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
