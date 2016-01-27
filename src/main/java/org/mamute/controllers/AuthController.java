@@ -8,7 +8,9 @@ import org.mamute.auth.Authenticator;
 import org.mamute.auth.FacebookAuthService;
 import org.mamute.auth.GoogleAuthService;
 import org.mamute.brutauth.auth.rules.LoggedRule;
+import org.mamute.dao.UserDAO;
 import org.mamute.model.LoggedUser;
+import org.mamute.model.User;
 import org.mamute.validators.LoginValidator;
 import org.mamute.validators.UrlValidator;
 
@@ -27,6 +29,7 @@ public class AuthController extends BaseController {
 	@Inject	private FacebookAuthService facebook;
 	@Inject	private GoogleAuthService google;
 	@Inject	private Result result;
+	@Inject private UserDAO users;
 	@Inject	private Environment env;
 	@Inject	private UrlValidator urlValidator;
 	@Inject	private LoginValidator validator;
@@ -53,10 +56,11 @@ public class AuthController extends BaseController {
 	public void login(String email, String password, String redirectUrl) {
 		try {
 			if (validator.validate(email, password) && auth.authenticate(email, password)) {
-				if(loggedUser.getCurrent().isConfirmedEmail()) {
+				User user = users.loadByEmail(email);
+				if(user.isConfirmedEmail()) {
 					redirectToRightUrl(redirectUrl);
 				} else {
-					System.out.println("redirectTo(ConfirmEmailController.class).sendEmailConfirm(email);");
+					users.clearSessionOf(user);
 					redirectTo(ConfirmEmailController.class).sendEmailConfirm(email);
 				}
 			} else {
