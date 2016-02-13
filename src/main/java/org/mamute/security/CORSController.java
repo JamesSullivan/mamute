@@ -1,13 +1,10 @@
 package org.mamute.security;
 
 import br.com.caelum.vraptor.Controller;
-<<<<<<< 2669bbaee9e6351a7ee9ae76ec9e3893768958b4
 import br.com.caelum.vraptor.Options;
-=======
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Options;
 import br.com.caelum.vraptor.Path;
->>>>>>> implementing CORS controller
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.controller.HttpMethod;
 import br.com.caelum.vraptor.http.MutableRequest;
