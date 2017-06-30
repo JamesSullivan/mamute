@@ -81,7 +81,7 @@ public class User implements Identifiable {
 	
 	private boolean moderator = false;
 
-	private boolean confirmedEmail = false;
+	private int confirmedEmail = 0;
 
 	private String forgotPasswordToken = "";
 	
@@ -204,6 +204,14 @@ public class User implements Identifiable {
 
 	public long getKarma() {
 		return karma;
+	}
+	
+	public boolean isConfirmedEmail() {
+		return confirmedEmail > 0;
+	}
+	
+	public void setConfirmedEmail() {
+		if(confirmedEmail < 1) confirmedEmail = 1;
 	}
 
 	public String getEmail() {
@@ -348,7 +356,7 @@ public class User implements Identifiable {
     }
     
     public void confirmEmail(){
-    	confirmedEmail = true;
+    	if(confirmedEmail < 1) confirmedEmail = 1;
 	}
     
 	public void add(LoginMethod brutalLogin) {
