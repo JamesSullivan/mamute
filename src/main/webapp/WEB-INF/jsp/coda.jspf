@@ -68,7 +68,7 @@
 		<script src="/assets/js/deps/feather.js"></script>
 	<!-- endbuild -->
 </c:if>
-
+ 
 <!-- build:js /js/mamute.js -->
 	<script src="/assets/js/deps/prettify.js"></script>
 	<script src="/assets/js/deps/Markdown.Converter.js"></script>
